@@ -1,6 +1,6 @@
 import axios from "axios";
 
-interface Driver {
+interface _Driver {
   broadcast_name: string;
   country_code: string;
   driver_number: number;
@@ -16,11 +16,12 @@ interface Driver {
 }
 
 
-export const getDrivers = async (_req: any, res: any) => {
+export const Get_Al_Drivers = async (_req: any, res: any) => {
     try {
-        const response = await axios.get<Driver[]>('https://api.openf1.org/v1/drivers');
-        const limitedDrivers = response.data.slice(0, 9);
-        res.json(limitedDrivers);
+        const response = await axios.get<_Driver[]>('https://api.openf1.org/v1/drivers');
+        # retrive the fist 10 drivers
+        const LD = response.data.slice(0, 3);
+        res.json(LD);
     } catch (err: any) {
         console.error(err.message);
         res.status(500).json({ error: 'Error fetching OpenF1 driver data' });

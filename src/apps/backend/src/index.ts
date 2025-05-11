@@ -13,7 +13,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use('/v1/drivers', driverRoutes);
+app.use('/drivers', driverRoutes);
 app.use('/v1/car-data', carRoutes);
 
 app.listen(PORT, () => {

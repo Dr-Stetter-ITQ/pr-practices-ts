@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DriverService } from '../services/driver.service';
+import { DriverService } from '../driver.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,14 +10,14 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./drivers.component.scss']
 })
 export class DriversComponent implements OnInit {
-    drivers:any = [];
+    conductores:any = [];
 
     constructor(private driverService: DriverService) { }
 
     ngOnInit(): void {
         this.driverService.getDrivers().subscribe({
             next: (data) => {
-                this.drivers = data;
+                this.conductores = data;
             },
             error: (err) => {
                 console.error('Error fetching drivers:', err);
