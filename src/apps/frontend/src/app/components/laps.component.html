@@ -1,0 +1,34 @@
+<h2>Buscar Datos del Coche</h2>
+
+<form [formGroup]="form" (ngSubmit)="getCar()">
+  <div class="form-field">
+    <label for="driverSelect">Piloto:</label>
+    <select id="driverSelect" [formControl]="form.controls.driver_number">
+      <option *ngFor="let driver of conductores" [value]="driver.driver_number">
+        {{ driver.broadcast_name }}
+      </option>
+    </select>
+  </div>
+
+  <label>
+    Lap numero:
+    <input type="number" min="-3" max="10" formControlName="v" />
+  </label>
+
+  <button type="submit" [disabled]="form.invalid">-</button>
+</form>
+
+@if (laps_data.length > 0) {
+  <h3>Resultados:</h3>
+  <ul>
+    @for (data of laps_data; track data) {
+      <li>
+        IMPRIMEDATA(data)
+      </li>
+    }
+  </ul>
+}
+
+@if (laps_data.length === 0 && !firstTime) {
+  <p>No se encontraron datos para los parámetros indicados.</p>
+}
