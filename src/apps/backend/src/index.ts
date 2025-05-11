@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import driverRoutes from './routes/driver.routes';
 import carRoutes from './routes/car.routes';
+import lapRoutes from './routes/lap.routes';
 
 // Usar las rutas
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use('/v1/drivers', driverRoutes);
 app.use('/v1/car-data', carRoutes);
+app.use('/v1/laps', lapRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
