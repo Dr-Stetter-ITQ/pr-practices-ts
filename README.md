@@ -65,4 +65,5 @@ ng serve
 This will start the Angular app on the default port (http://localhost:4200).
 
 ## Excersice
-The idea is to review the two PR's that I've prepared! But you can do a global review if you want and sent an email to your mentor.
+The idea is to review the three PR's that I've prepared! But you can do a global review if you want and sent an email to your mentor.
+- the last pr (feature laps) is the most complete!
