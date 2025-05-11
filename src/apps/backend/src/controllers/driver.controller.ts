@@ -20,7 +20,7 @@ export const Get_Al_Drivers = async (_req: any, res: any) => {
     try {
         const response = await axios.get<_Driver[]>('https://api.openf1.org/v1/drivers');
         # retrive the fist 10 drivers
-        const LD = response.data.slice(0, 3);
+        const LD = response.data.slice(0, 9);
         res.json(LD);
     } catch (err: any) {
         console.error(err.message);
