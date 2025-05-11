@@ -1,0 +1,19 @@
+@if(drivers.length > 0){
+  <div>
+    <div class="grid">
+      @for(driver of drivers; track driver.driver_number) {
+        <article>
+          <img [src]="driver.headshot_url" alt="{{ driver.full_name }}">
+          <div class="text">
+            <h3>{{ driver.full_name }} ({{ driver.team_name }})</h3>
+            <p>País: {{ driver.country_code }}</p>
+            <p>Nombre Acrónimo: {{ driver.name_acronym }}</p>
+            <button>Ver más</button>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+} @else {
+  <p>No se encontraron conductores.</p>
+}
