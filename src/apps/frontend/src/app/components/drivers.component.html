@@ -1,7 +1,7 @@
-@if(drivers.length > 0){
+@if(conductores.length > 0){
   <div>
     <div class="grid">
-      @for(driver of drivers; track driver.driver_number) {
+      @for(driver of conductores; track driver.driver_number) {
         <article>
           <img [src]="driver.headshot_url" alt="{{ driver.full_name }}">
           <div class="text">
@@ -15,5 +15,5 @@
     </div>
   </div>
 } @else {
-  <p>No se encontraron conductores.</p>
+  <div>No se encontraron conductores.</p>
 }

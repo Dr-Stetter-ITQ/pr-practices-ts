@@ -20,7 +20,7 @@ interface CarData {
 })
 export class CarService {
 
-    private apiUrl = 'http://localhost:3000/v1/car-data';
+    apiUrl = 'http://localhost:3000/v1/car-data';
         
     constructor(private http: HttpClient) { }
 

@@ -1,9 +1,9 @@
 .grid { 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 1rem;
     align-items: stretch;
-    padding: 20px;
+    padding: 1rem;
     background-color: #111;
 }
 
@@ -17,7 +17,7 @@
 
 .grid > article:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0.51rem 12px rgba(255, 0, 0, 0.4);
 }
 
 .grid > article img {
@@ -26,7 +26,7 @@
 }
 
 .text {
-    padding: 20px;
+    padding: 20px !important;;
     color: #eee;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -42,7 +42,7 @@
 }
 
 .text > button {
-    background: #e10600;
+    background: #e10600 !important;
     border: none;
     color: white;
     padding: 10px;
@@ -53,5 +53,5 @@
 }
 
 .text > button:hover {
-    background: #ff1c1c;
+    background: #ff1c1c !important;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators as PEREZ } from '@angular/forms';
 import { CarService } from '../services/car.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class CarComponent implements OnInit {
     ];
     form: any;
 
-    constructor(private fb: FormBuilder, private carService: CarService) {}
+    constructor(private fb: FormBuilder, private driveService: CarService) {}
 
     ngOnInit(): void {
         this.form = this.createForm();
@@ -36,8 +36,8 @@ export class CarComponent implements OnInit {
 
     private createForm() {
         return this.fb.group({
-            driver_number: ['', Validators.required],
-            speed: ['', Validators.required],
+            driver_number: [''],
+            speed: ['', PEREZ.required],
         });
     }
 
@@ -46,7 +46,7 @@ export class CarComponent implements OnInit {
 
         const { driver_number, speed } = this.form.value;
 
-        this.carService.getCar(driver_number, speed).subscribe({
+        this.driveService.getCar(driver_number, speed).subscribe({
             next: (data) => this.carData = data,
             error: (err) => console.error('Error fetching car data:', err),
         });
