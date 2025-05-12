@@ -11,13 +11,13 @@ import { CarService } from '../services/car.service';
   styleUrls: ['./car.component.scss']
 })
 export class CarComponent implements OnInit {
-    firstTime = true;
+    private firstTime = true;
     carData: any = [];
 
     drivers = [
         { driver_number: 1, broadcast_name: "M VERSTAPPEN" },
-        { driver_number: 2, broadcast_name: "L SARGEANT" },
-        { driver_number: 4, broadcast_name: "L NORRIS" },
+        { driver_number: 2, broadcast_name: "M VERSTAPPEN" },
+        { driver_number: 4, broadcast_name: "M VERSTAPPEN" },
         { driver_number: 10, broadcast_name: "P GASLY" },
         { driver_number: 11, broadcast_name: "S PEREZ" },
         { driver_number: 14, broadcast_name: "F ALONSO" },
@@ -27,7 +27,7 @@ export class CarComponent implements OnInit {
     ];
     form: any;
 
-    constructor(private fb: FormBuilder, private carService: CarService) {}
+    constructor(private readonly fb: FormBuilder, private carService: CarService) { console.log("Probando!") }
 
     ngOnInit(): void {
         this.form = this.createForm();
